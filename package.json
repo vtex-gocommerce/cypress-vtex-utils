@@ -1,42 +1,15 @@
 {
-  "name": "@neuralegion/cypress-har-generator",
+  "name": "cypress-vtex-utils",
   "version": "0.0.0",
-  "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NeuraLegion/cypress-har-generator.git"
+    "url": "git+https://github.com/vtex-gocommerce/cypress-vtex-utils.git"
   },
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "author": {
-    "name": "Artem Derevnjuk",
-    "email": "artem.derevnjuk@neuralegion.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/NeuraLegion/cypress-har-generator/issues"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "cypress",
-    "har",
-    "cypress-plugin",
-    "chrome",
-    "http-archive"
-  ],
   "scripts": {
-    "semantic-release": "semantic-release",
-    "lint": "eslint -c .eslintrc 'src/**/*.ts'",
-    "pretty": "prettier --check 'src/**/*.ts'",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
     "build": "tsc",
     "prepare": "npm run build"
   },
-  "homepage": "https://github.com/NeuraLegion/cypress-har-generator#readme",
+  "homepage": "https://github.com/vtex-gocommerce/cypress-vtex-utils#readme",
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
@@ -66,39 +39,6 @@
     "tslint": "~5.20.1",
     "tslint-plugin-prettier": "~2.0.1",
     "typescript": "~3.7.2"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "post-commit": "git update-index --again"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".spec.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
   },
   "dependencies": {
     "tslib": "^1.10.0",

@@ -9,8 +9,10 @@ type CypressInstallationCallback = (
 
 interface CypressTasks {
   saveHar(options: PluginOptions): Promise<void>;
-  recordHar(options: PluginOptions): Promise<void>;
+  recordHarConsole(options: PluginOptions): Promise<void>;
   removeHar(options: PluginOptions): Promise<void>;
+  removeConsole(options: PluginOptions): Promise<void>;
+  saveConsole(options: PluginOptions): Promise<void>;
 }
 
 type InstallationArg = CypressInstallationCallback | CypressTasks;
@@ -23,7 +25,7 @@ type CypressCallback = (
 ) => void;
 
 const DEFAULT_OPTIONS: PluginOptions = {
-  file: './archive.har',
+  file: './NetworkRequest.har',
   stubPath: '/__cypress/xhrs/'
 };
 
@@ -44,8 +46,10 @@ export function install(
 
   on('task', {
     saveHar: (): Promise<void> => plugin.saveHar(),
-    recordHar: (): Promise<void> => plugin.recordHar(),
-    removeHar: (): Promise<void> => plugin.removeHar()
+    recordHarConsole: (): Promise<void> => plugin.recordHarConsole(),
+    removeHar: (): Promise<void> => plugin.removeHar(),
+    removeConsole: (): Promise<void> => plugin.removeConsole(),
+    saveConsole: (): Promise<void> => plugin.saveConsole()
   });
 }
 

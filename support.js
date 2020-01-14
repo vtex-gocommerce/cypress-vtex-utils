@@ -1,8 +1,13 @@
 'use strict';
 
 before(() => {
+  cy.task('removeConsole');
   cy.task('removeHar');
-  cy.task('recordHar');
+  cy.task('recordHarConsole');
+
 });
 
-after(() => cy.task('saveHar'));
+after(() => {
+  cy.task('saveHar');
+  cy.task('saveConsole');
+});

@@ -1,57 +1,10 @@
-# cypress-har-generator
+# cypress-vtex-utils
 
-Generate [HTTP Archive (HAR)](http://www.softwareishard.com/blog/har-12-spec/)  while running tests
+Generate [HTTP Archive (HAR) and Archive Console Log output]
 
-## Install
+Plugin that brings together the best of two existing solutions: flotwig/cypress-log-to-output and NeuraLegion/cypress-har-generator. Using it, it's possible to export HAR file and sends all console logs that occur in the browser to a consoleLog.txt file.
 
-Run `npm i --save-dev @neuralegion/cypress-har-generator` to install the plugin.
+This Plugin is just for VTEX use, it's not a public project, to use the public versions, please check for https://github.com/NeuraLegion/cypress-har-generator and https://github.com/flotwig/cypress-log-to-output
 
-> ✴ For details about changes between versions, and information about updates on previous releases, see the Releases tab on GitHub: https://github.com/NeuraLegion/cypress-har-generator/releases
 
-## Quick Start
-
-First, install `cypress-har-generator` as development dependency:
-
-```bash
-npm i --save-dev @neuralegion/cypress-har-generator
-```
-
-Next, go to the cypress's directory and put this code is in your `cypress/plugins/index.js` file:
-
-```js
-const { install, ensureRequiredBrowserFlags } = require('@neuralegion/cypress-har-generator');
-
-module.exports = (on, config) => {
-  install(on, config);
-  
-  on('before:browser:launch', (browser = {}, args) =>
-    ensureRequiredBrowserFlags(browser, args)
-  );
-};
-```
-
-After then, you should register tasks that perform the manipulation with the HAR file. 
-For that add this module to your support file `cypress/support/index.js`:
-
-```js
-require('@neuralegion/cypress-har-generator/support');
-```
-
-Once the configuration is completed, start the tests with:
-
-```bash
-cypress run --browser chrome
-```
-
-> ✴  Now only Chrome family browsers are supported.
-
-When the cypress finished executing tests, the plugin will save a new archive `archive.har`:
-
-> ✴  If you want to change a path to a file, you can specify it by setting the `CYPRESS_HAR_FILE` environment variable.
-
-## License
-
-Copyright © 2019 [NeuraLegion](https://github.com/NeuraLegion).
-
-This project is licensed under the MIT License - see the [LICENSE file](LICENSE) for details.
 
