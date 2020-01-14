@@ -5,10 +5,13 @@
     "type": "git",
     "url": "git+https://github.com/vtex-gocommerce/cypress-vtex-utils.git"
   },
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build"
   },
+
   "homepage": "https://github.com/vtex-gocommerce/cypress-vtex-utils#readme",
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
