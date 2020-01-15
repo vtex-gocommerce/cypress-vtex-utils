@@ -23,7 +23,6 @@
     "@typescript-eslint/eslint-plugin": "^2.7.0",
     "@typescript-eslint/eslint-plugin-tslint": "^2.7.0",
     "@typescript-eslint/parser": "^2.7.0",
-    "cypress": "^3.7.0",
     "devtools-protocol": "0.0.719330",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
