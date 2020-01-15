@@ -173,6 +173,7 @@ export class Plugin {
     const prefix = `[${new Date(timestamp).toISOString()}] ${icon} `;
     const prefixSpacer = ' '.repeat(prefix.length);
 
+    separateLogs()
     writeConsoleLog(`${prefix}${chalk.bold(level)} (${source}): ${text}\n`);
 
     if (url) {
@@ -196,6 +197,7 @@ export class Plugin {
 
     const prefix = `[${new Date(timestamp).toISOString()}] ${icon} `;
     const prefixSpacer = ' '.repeat(prefix.length);
+    separateLogs()
     writeConsoleLog(`${prefix}${chalk.bold(`console.${type}`)} called`);
     if (args) {
       hasArgs(args, prefixSpacer);
@@ -215,4 +217,11 @@ function hasArgs(args: any, prefixSpacer: any) {
         .join(`\n${prefixSpacer}  `)
         .trimRight()
   );
+}
+
+function separateLogs() {
+  writeConsoleLog("\n=========================================================================================================================================================================================================")    
+  writeConsoleLog("=========================================================================================================================================================================================================")    
+  writeConsoleLog("=========================================================================================================================================================================================================\n")    
+
 }
